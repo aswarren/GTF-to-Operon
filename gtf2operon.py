@@ -77,12 +77,12 @@ def main():
                 to_add=[]
                 if transcript.strand:
                     to_add = strand_buckets[transcript.strand]
-                else:
-                    win_len=0
-                    for k in strand_buckets:
-                        if len(strand_buckets[k]) > win_len:
-                            win_len = len(strand_buckets[k])
-                            to_add =strand_buckets[k]
+                #else:
+                #    win_len=0
+                #    for k in strand_buckets:
+                #        if len(strand_buckets[k]) > win_len:
+                #            win_len = len(strand_buckets[k])
+                #            to_add =strand_buckets[k]
                 for t in to_add:
                     t.qualifiers['Parent']=[transcript.id]
                     transcript.sub_features.append(t)
